@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global */
+html, body { scroll-behavior: smooth; height: 100%; }
+body { background: #000; color: #fff; font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+
+/* Animated gradient text */
+.gradient-text {
+  background: linear-gradient(90deg,#7c3aed,#06b6d4,#f472b6);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gmove 6s linear infinite;
+}
+@keyframes gmove { 0% { background-position: 0% 50% } 50% { background-position: 100% 50% } 100% { background-position: 0% 50% } }
+
+/* Floating / glass */
+.card-glass {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+}
+
+/* floating animation */
+.floating { animation: floaty 6s ease-in-out infinite; }
+@keyframes floaty { 0% { transform: translateY(0px) } 50% { transform: translateY(-12px) } 100% { transform: translateY(0px) } }
+
+/* small responsive tweaks */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+}
