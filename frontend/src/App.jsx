@@ -91,7 +91,45 @@ export default function App() {
               whileHover={{ scale: 1.03 }}
               className="px-6 py-3 rounded-xl border border-slate-700 text-slate-200"
             >
-              Watch Demo
+            {/* === Live Demo Section === */}
+import { motion } from "framer-motion";
+
+<motion.section
+  id="demo"
+  initial={{ opacity: 0, y: 80, scale: 0.9 }}
+  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+  transition={{ duration: 0.9, ease: "easeOut" }}
+  viewport={{ once: true, amount: 0.3 }}
+  className="relative py-28 flex flex-col items-center justify-center bg-gradient-to-b from-transparent via-indigo-950/30 to-black/90 overflow-hidden"
+>
+  {/* Parallax Glow */}
+  <div className="absolute inset-0 bg-gradient-to-r from-indigo-800/20 via-pink-500/10 to-purple-700/20 blur-3xl animate-pulse"></div>
+
+  {/* Glass Card */}
+  <div className="relative z-10 w-[90%] max-w-5xl p-6 md:p-10 rounded-3xl backdrop-blur-2xl bg-white/5 border border-white/10 shadow-[0_0_30px_rgba(255,255,255,0.08)]">
+    <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-10 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-pink-500 to-purple-400">
+      See AlgoNova in Action
+    </h2>
+
+    {/* Embedded Video */}
+    <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+      <iframe
+        className="w-full h-full"
+        src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=0&mute=1&rel=0"
+        title="AlgoNova Demo"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </div>
+
+    <p className="mt-10 text-center text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
+      Watch how <span className="text-pink-400 font-semibold">AlgoNova</span> brings 
+      AI-driven intelligence to your transactions — visualize your spending, automate 
+      algorithmic decisions, and unlock insights like never before.
+    </p>
+  </div>
+</motion.section>
+  Watch Demo
             </motion.button>
           </div>
         </div>
