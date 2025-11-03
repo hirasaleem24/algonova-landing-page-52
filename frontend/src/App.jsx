@@ -134,6 +134,44 @@ import { motion } from "framer-motion";
           </div>
         </div>
       </section>
+      import { motion } from "framer-motion";
+
+<motion.section
+  id="demo"
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.9, ease: "easeOut" }}
+  viewport={{ once: true, amount: 0.3 }}
+  className="relative py-28 flex flex-col items-center justify-center bg-gradient-to-b from-transparent via-indigo-950/30 to-black/90 overflow-hidden"
+>
+  {/* Background glow */}
+  <div className="absolute inset-0 bg-gradient-to-r from-indigo-800/20 via-pink-500/10 to-purple-700/20 blur-3xl animate-pulse"></div>
+
+  {/* Glassmorphic Card */}
+  <div className="relative z-10 w-[90%] max-w-5xl p-6 md:p-10 rounded-3xl backdrop-blur-2xl bg-white/5 border border-white/10 shadow-[0_0_30px_rgba(255,255,255,0.08)]">
+    <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-10 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-pink-500 to-purple-400">
+      See AlgoNova in Action
+    </h2>
+
+    {/* Video Display */}
+    <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+      <video
+        src="/algonova-demo.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    <p className="mt-10 text-center text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
+      Experience <span className="text-pink-400 font-semibold">AlgoNova</span> — a next-gen wallet powered by 
+      AI algorithms for smarter transactions and insightful analytics.
+    </p>
+  </div>
+</motion.section>
+
 
       {/* Features */}
       <section id="features" className="py-20 px-6">
